@@ -38,3 +38,7 @@ db/production.sqlite3-shm
 db/production.sqlite3-wal
 db/test.sqlite3
 db/development.sqlite3
+
+/tmp
+/storage
+.vscode/
