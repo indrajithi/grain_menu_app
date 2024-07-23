@@ -20,7 +20,7 @@ gem 'sprockets-rails'
 
 gem 'graphql'
 
-gem 'graphiql-rails', group: :development
+gem 'graphiql-rails'
 
 # Use sqlite3, pg as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

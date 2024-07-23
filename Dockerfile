@@ -16,6 +16,8 @@ ARG RAILS_ENV=development
 ENV RAILS_ENV=$RAILS_ENV
 ENV RACK_ENV=$RAILS_ENV
 
+ENV BEARER_TOKEN=$BEARER_TOKEN
+
 # Set default secret_key_base
 ARG SECRET_KEY_BASE
 ENV SECRET_KEY_BASE=$SECRET_KEY_BASE
@@ -30,7 +32,7 @@ COPY . .
 RUN mkdir -p db && touch db/production.sqlite3
 # Precompile assets and run other necessary Rails tasks
 RUN bundle exec rake assets:precompile
-RUN bundle exec rake db:create db:migrate db:seed
+RUN bundle exec rake db:create db:migrate
 
 # Expose the port that Rails will run on
 EXPOSE 8080
