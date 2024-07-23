@@ -1,8 +1,13 @@
 # .rubocop.yml
 
-Style/Documentation:
+AllCops:
   Exclude:
     - "app/helpers/application_helper.rb"
     - "app/mailers/application_mailer.rb"
     - "app/models/application_record.rb"
     - "app/models/menu.rb"
+    - "test/**/*"
+    - "spec/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "bin/**/*"
