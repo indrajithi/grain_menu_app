@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  self.inheritance_column = :_type_disabled # This disables STI by changing the inheritance column
+
   has_many :section_items
   has_many :sections, through: :section_items
   has_many :item_modifier_groups
@@ -6,4 +8,7 @@ class Item < ApplicationRecord
   has_many :modifiers
 
   validates :identifier, :label, :type, presence: true
+
+  # todo
+  # add enum to types
 end
