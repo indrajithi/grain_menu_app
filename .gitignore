@@ -33,3 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+db/production.sqlite3
+db/production.sqlite3-shm
+db/production.sqlite3-wal
