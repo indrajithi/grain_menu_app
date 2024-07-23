@@ -1,0 +1,13 @@
+AllCops:
+  Include:
+    - app/**/*.rb
+  Exclude:
+    - app/controllers/*.rb
+  TargetRubyVersion: 3.1
+
+Style/LineLength:
+  MaxLength: 120
+
+Naming/PredicateName:
+  Pattern: ^is_(.*)$
+  Style: underscore
