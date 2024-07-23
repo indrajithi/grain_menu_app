@@ -33,9 +33,9 @@ specialty_pizzas_section = Section.create!(
 MenuSection.create!(menu: menu, section: classic_pizzas_section, display_order: 1)
 MenuSection.create!(menu: menu, section: specialty_pizzas_section, display_order: 2)
 
-# Create Non-Configurable Items
+# Create Non-Configurable Items (Product)
 margherita_pizza = Item.create!(
-  type: "product",
+  type: "Product",  # Ensure type value adheres to the allowed values
   identifier: "margherita-pizza",
   label: "Margherita Pizza",
   description: "A classic margherita pizza with tomato sauce, mozzarella, and basil.",
@@ -43,24 +43,29 @@ margherita_pizza = Item.create!(
 )
 
 pepperoni_pizza = Item.create!(
-  type: "product",
+  type: "Product",  # Ensure type value adheres to the allowed values
   identifier: "pepperoni-pizza",
   label: "Pepperoni Pizza",
   description: "A delicious pepperoni pizza with tomato sauce and mozzarella.",
   price: 12.0
 )
 
-# Link Non-Configurable Items to Section
-SectionItem.create!(section: classic_pizzas_section, item: margherita_pizza, display_order: 1)
-SectionItem.create!(section: classic_pizzas_section, item: pepperoni_pizza, display_order: 2)
-
-# Create Configurable Item
+# Create Configurable Item (Product)
 bbq_chicken_pizza = Item.create!(
-  type: "product",
+  type: "Product",  # Ensure type value adheres to the allowed values
   identifier: "bbq-chicken-pizza",
   label: "BBQ Chicken Pizza",
   description: "A tasty BBQ chicken pizza with customizable options.",
   price: 15.0
+)
+
+# Create a Component Item (for example, a base component)
+pizza_base = Item.create!(
+  type: "Component",  # Ensure type value adheres to the allowed values
+  identifier: "pizza-base",
+  label: "Pizza Base",
+  description: "A standard pizza base for customizable pizzas.",
+  price: 5.0
 )
 
 # Create Modifier Groups
@@ -131,7 +136,12 @@ extra_olives_modifier = Modifier.create!(
   price_override: 1.0
 )
 
+# Link Non-Configurable Items to Section
+SectionItem.create!(section: classic_pizzas_section, item: margherita_pizza, display_order: 1)
+SectionItem.create!(section: classic_pizzas_section, item: pepperoni_pizza, display_order: 2)
+
 # Link Configurable Item to Section
 SectionItem.create!(section: specialty_pizzas_section, item: bbq_chicken_pizza, display_order: 1)
+SectionItem.create!(section: specialty_pizzas_section, item: pizza_base, display_order: 2)
 
 puts "Seeding completed successfully!"

@@ -9,6 +9,5 @@ class Item < ApplicationRecord
 
   validates :identifier, :label, :type, presence: true
 
-  # todo
-  # add enum to types
+  validates :type, inclusion: { in: %w[Product Component], message: '%<value>s is not a valid type' }
 end

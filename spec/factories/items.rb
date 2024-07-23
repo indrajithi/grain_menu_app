@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    type { "" }
+    type { "Product" }
     identifier { "MyString" }
     label { "MyString" }
     description { "MyString" }

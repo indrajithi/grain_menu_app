@@ -8,6 +8,8 @@ module Types
     field :type, String, null: false
     field :modifier_groups, [Types::ModifierGroupType], null: false
 
+    field :modifiers, [Types::ModifierType], null: true
+
     def modifier_groups
       object.modifier_groups
     end
