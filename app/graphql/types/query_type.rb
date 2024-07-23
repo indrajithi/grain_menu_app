@@ -54,5 +54,41 @@ module Types
     def item(id:)
       Item.find(id)
     end
+
+    # Add ModifierGroup Queries
+    field :modifier_groups, [Types::ModifierGroupType], null: false do
+      description 'Retrieve all modifier groups'
+    end
+
+    def modifier_groups
+      ModifierGroup.all
+    end
+
+    field :modifier_group, Types::ModifierGroupType, null: false do
+      description 'Retrieve a single modifier group'
+      argument :id, ID, required: true
+    end
+
+    def modifier_group(id:)
+      ModifierGroup.find(id)
+    end
+
+    # Add Modifier Queries
+    field :modifiers, [Types::ModifierType], null: false do
+      description 'Retrieve all modifiers'
+    end
+
+    def modifiers
+      Modifier.all
+    end
+
+    field :modifier, Types::ModifierType, null: false do
+      description 'Retrieve a single modifier'
+      argument :id, ID, required: true
+    end
+
+    def modifier(id:)
+      Modifier.find(id)
+    end
   end
 end
