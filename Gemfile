@@ -20,7 +20,8 @@ gem 'graphql'
 
 gem 'graphiql-rails', group: :development
 
-# Use sqlite3 as the database for Active Record
+# Use sqlite3, pg as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'sqlite3', '~> 1.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
