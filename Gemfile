@@ -10,6 +10,8 @@ gem 'rubocop-rails', '~> 2.25', '>= 2.25.1'
 
 gem 'factory_bot_rails'
 
+gem 'dotenv-rails', groups: %i[development test]
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
 

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: proc { |env| [200, { 'Content-Type' => 'application/json' }, ['{"message": "Welcome to Grain Menu!"}']] }
+
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
