@@ -27,8 +27,10 @@ RUN gem install bundler && bundle install --jobs 4
 # Adding project files
 COPY . .
 
+RUN mkdir -p db && touch db/production.sqlite3
 # Precompile assets and run other necessary Rails tasks
 RUN bundle exec rake assets:precompile
+RUN bundle exec rake db:create db:migrate db:seed
 
 # Expose the port that Rails will run on
 EXPOSE 8080
