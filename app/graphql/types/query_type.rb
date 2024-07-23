@@ -37,6 +37,22 @@ module Types
       Section.find(id)
     end
 
+    # Add Item Queries
+    field :items, [Types::ItemType], null: false do
+      description 'Retrieve all items'
+    end
 
+    def items
+      Item.all
+    end
+
+    field :item, Types::ItemType, null: false do
+      description 'Retrieve a single item'
+      argument :id, ID, required: true
+    end
+
+    def item(id:)
+      Item.find(id)
+    end
   end
 end
