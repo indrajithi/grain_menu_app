@@ -9,3 +9,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+Menu.create!(label: "Breakfast Menu", state: "active", start_date: Date.today, end_date: Date.today + 1.month)
+Menu.create!(label: "Lunch Menu", state: "active", start_date: Date.today, end_date: Date.today + 1.month)
+Menu.create!(label: "Dinner Menu", state: "inactive", start_date: Date.today, end_date: Date.today + 1.month)
