@@ -1,6 +1,7 @@
 # .rubocop.yml
 
 AllCops:
+  SuggestExtensions: false
   Exclude:
     - "app/helpers/application_helper.rb"
     - "app/mailers/application_mailer.rb"
@@ -11,3 +12,8 @@ AllCops:
     - "db/**/*"
     - "config/**/*"
     - "bin/**/*"
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

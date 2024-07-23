@@ -6,6 +6,8 @@ ruby '3.1.0'
 
 gem 'rubocop', '~> 1.23'
 
+gem 'rubocop-rails', '~> 2.25', '>= 2.25.1'
+
 gem 'factory_bot_rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
